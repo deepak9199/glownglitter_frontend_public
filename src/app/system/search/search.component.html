@@ -1,0 +1,107 @@
+<app-loading *ngIf="loading"></app-loading>
+<div *ngIf="!loading">
+    <div _ngcontent-krs-c16="" class="container"><br _ngcontent-krs-c16="">
+        <div _ngcontent-krs-c16="" class="row">
+            <div _ngcontent-krs-c16="" class="col-12">
+                <div _ngcontent-krs-c16="" class="section-title text-center">
+                    <h2 _ngcontent-krs-c16="" class="title" style="font-size: 25; margin-bottom: 20px;">
+                        SEARCHED PRODUCTS </h2>
+                </div>
+            </div>
+        </div>
+        <div _ngcontent-krs-c16="" class="row">
+            <div _ngcontent-krs-c16="" class="col-12">
+                <div _ngcontent-krs-c16="" class="product-container">
+                    <div _ngcontent-krs-c16="" class="tab-content">
+                        <div _ngcontent-krs-c16="" class="tab-pane fade show active">
+                            <div _ngcontent-krs-c16=""
+                                class="product-carousel-4 slick-row-10 slick-arrow-style slick-initialized slick-slider">
+                                <div class="slick-list draggable">
+                                    <a onclick="window.history.back()" style="float: left;">
+                                        <i class="fa fa-arrow-left"></i>Back</a>
+                                    <select #selectedsort (change)="shortdata(selectedsort.value)" name="sort_option"
+                                        id="sort_options_id" style="float: right; margin-right: 10px;"
+                                        class="js-select selectpicker dropdown-select max-width-200 max-width-160-sm right-dropdown-0 px-2 px-xl-0"
+                                        data-style="btn-sm bg-white font-weight-normal py-2 border text-gray-20 bg-lg-down-transparent border-lg-down-0"
+                                        tabindex="-98">
+                                        <option selected="" id="default" value="one">
+                                            Short by
+                                        </option>
+                                        <option id="az" name="az" value="two">Sort by A-Z</option>
+                                        <option id="za" value="three">Sort by Z-A</option>
+                                        <option id="pricelh" value="four">
+                                            Price: low to high
+                                        </option>
+                                        <option id="pricehl" value="five">
+                                            Price: high to low
+                                        </option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div _ngcontent-krs-c16="" class="shop-main-wrapper section-padding">
+        <div _ngcontent-krs-c16="" class="container">
+            <div _ngcontent-krs-c16="" class="row">
+                <div _ngcontent-krs-c16="" class="col-lg-12 order-1 order-lg-2">
+                    <div _ngcontent-krs-c16="" class="shop-product-wrapper">
+                        <div _ngcontent-krs-c16="" class="shop-product-wrap grid-view row mbn-30">
+                            <div *ngFor="let products of filteredItems" _ngcontent-krs-c16=""
+                                class="col-md-3 col-sm-6 ng-star-inserted">
+                                <div (click)="selectdata(products)" _ngcontent-krs-c16="" class="product-item">
+                                    <figure _ngcontent-krs-c16="" class="product-thumb">
+                                        <a _ngcontent-krs-c16="">
+                                            <!-- <img _ngcontent-krs-c16="" class="pri-img" src="{{products.imageUrl[0]}}">
+                                            <img _ngcontent-krs-c16="" class="sec-img" src="{{products.imageUrl[0]}}"> -->
+                                            <img src="assets/images/imgloading.gif" alt="Placeholder Image"
+                                                loading="lazy" data-src="{{products.imageUrl[0]}}">
+
+                                            <!-- Actual image -->
+                                            <img src="{{products.imageUrl[0]}}" alt="Actual Image"
+                                                style="display: none;">
+                                        </a>
+                                    </figure>
+                                    <div _ngcontent-krs-c16="" class="product-caption text-center">
+                                        <h6 _ngcontent-krs-c16="" class="product-name"><a style="font-size: medium;"
+                                                _ngcontent-krs-c16="" routerlink="../product-detail"
+                                                href="/product-detail">
+                                                {{products.productname.toUpperCase()}} </a></h6>
+                                    </div>
+                                </div>
+                                <div _ngcontent-krs-c16="" class="product-list-item">
+                                    <figure _ngcontent-krs-c16="" class="product-thumb"><a _ngcontent-krs-c16=""
+                                            href="/product-detail/zcGPWIYXTJLGBSXFOZsN"><img _ngcontent-krs-c16=""
+                                                class="pri-img" src="{{products.imageUrl[0]}}"><img
+                                                _ngcontent-krs-c16="" class="sec-img"
+                                                src="{{products.imageUrl[0]}}"></a>
+                                        <div _ngcontent-krs-c16="" class="product-badge">
+                                            <div _ngcontent-krs-c16="" class="product-label new"><span
+                                                    _ngcontent-krs-c16="">new</span></div>
+                                        </div>
+                                    </figure>
+                                    <div _ngcontent-krs-c16="" class="product-content-list">
+                                        <div _ngcontent-krs-c16="" class="manufacturer-name"><a _ngcontent-krs-c16="">
+                                                {{products.category}} </a></div>
+                                        <h5 _ngcontent-krs-c16="" class="product-name"><a _ngcontent-krs-c16="">
+                                                {{products.sub_category}} </a>
+                                        </h5>
+                                        <p _ngcontent-krs-c16="">{{products.description}} </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><br _ngcontent-krs-c16=""><br _ngcontent-krs-c16="">
+                        <div _ngcontent-krs-c16="" class="text-center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div _ngcontent-krs-c16="" class="scroll-top not-visible"><i _ngcontent-krs-c16="" class="fa fa-angle-up"></i></div>
+
+    <script type="text/javascript" src="../../../assets/js/main.js"></script>
+</div>

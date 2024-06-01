@@ -1,0 +1,57 @@
+<app-loading *ngIf="loading"></app-loading>
+<div *ngIf="!loading">
+    <div _ngcontent-krs-c10="" class="breadcrumb-area">
+        <div _ngcontent-krs-c10="" class="container">
+            <div _ngcontent-krs-c10="" class="row">
+                <div _ngcontent-krs-c10="" class="col-12">
+                    <div _ngcontent-krs-c10="" class="breadcrumb-wrap">
+                        <nav _ngcontent-krs-c10="" aria-label="breadcrumb">
+                            <ul _ngcontent-krs-c10="" class="breadcrumb">
+                                <li _ngcontent-krs-c10="" class="breadcrumb-item"><a _ngcontent-krs-c10=""
+                                        href="index.html"><i _ngcontent-krs-c10="" class="fa fa-home"></i></a></li>
+                                <li _ngcontent-krs-c10="" aria-current="page" class="breadcrumb-item active">Register
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div _ngcontent-krs-c10="" class="login-register-wrapper section-padding">
+        <div _ngcontent-krs-c10="" class="container">
+            <div _ngcontent-krs-c10="" class="member-area-from-wrap">
+                <div _ngcontent-krs-c10="" class="row">
+                    <div _ngcontent-krs-c10="" class="col-lg-12">
+                        <div _ngcontent-krs-c10="" class="login-reg-form-wrap sign-up-form">
+                            <h5 _ngcontent-krs-c10="">Singup Form</h5>
+
+                            <div _ngcontent-krs-c10="" class="single-input-item"><input #name _ngcontent-krs-c10=""
+                                    type="text" name="name" placeholder="Full Name" required=""
+                                    class="ng-untouched ng-pristine ng-invalid"></div>
+                            <div _ngcontent-krs-c10="" class="single-input-item"><input #email _ngcontent-krs-c10=""
+                                    type="email" name="email" placeholder="Enter your Email" required=""
+                                    class="ng-untouched ng-pristine ng-invalid"></div>
+                            <div _ngcontent-krs-c10="" class="single-input-item"><input #password _ngcontent-krs-c10=""
+                                    type="password" name="password" placeholder="Enter your password" required=""
+                                    class="ng-untouched ng-pristine ng-invalid"></div>
+                            <div _ngcontent-krs-c10="" class="single-input-item"><input #contact _ngcontent-krs-c10=""
+                                    type="phone" name="phone" placeholder="Enter your contact Number" required=""
+                                    class="ng-untouched ng-pristine ng-invalid"></div>
+                            <div _ngcontent-krs-c10="" class="single-input-item">
+                                <div _ngcontent-krs-c10=""
+                                    class="login-reg-form-meta d-flex align-items-center justify-content-between">
+                                    <span _ngcontent-krs-c10="">If registered please: <a _ngcontent-krs-c10=""
+                                            [routerLink]="['/login']" class="forget-pwd" href="/login">Login</a></span>
+                                </div>
+                            </div>
+                            <div _ngcontent-krs-c10="" class="single-input-item"><button
+                                    (click)="register(email.value,password.value,name.value,contact.value)"
+                                    _ngcontent-krs-c10="" type="submit" class="btn btn-sqr">Register</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

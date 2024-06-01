@@ -1,0 +1,252 @@
+<app-loading *ngIf="loading"></app-loading>
+<div *ngIf="!loading" _ngcontent-vei-c7="" class="shop-main-wrapper section-padding pb-0">
+    <div _ngcontent-vei-c7="" class="container">
+        <div _ngcontent-vei-c7="" class="row">
+            <div _ngcontent-vei-c7="" class="col-lg-12 order-1 order-lg-2">
+                <div _ngcontent-vei-c7="" class="product-details-inner">
+                    <div _ngcontent-vei-c7="" class="row">
+                        <a onclick="window.history.back()" style="float: left;font-size: x-large;">
+                            <i class="fa fa-long-arrow-left"></i></a>
+                    </div>
+                    <div _ngcontent-vei-c7="" class="row">
+                        <div _ngcontent-vei-c7="" class="col-lg-5">
+                            <div _ngcontent-vei-c7="" class="product-large-slider slick-initialized slick-slider">
+                                <div class="slick-list draggable">
+                                    <div class="slick-track" style="opacity: 1; width: 520px;">
+                                        <div class="slick-slide slick-current slick-active" data-slick-index="0"
+                                            aria-hidden="false"
+                                            style="width: 520px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;">
+                                            <div>
+                                                <div _ngcontent-vei-c7="" class="pro-large-img"
+                                                    style="width: 100%; display: inline-block;"><a _ngcontent-vei-c7=""
+                                                        data-lightbox="models" title="BANDED ONYX CHITAI NECKLACE"
+                                                        tabindex="0"><img _ngcontent-vei-c7=""
+                                                            (click)="openDialog(selectedimgurl)"
+                                                            src="{{selectedimgurl}}"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div _ngcontent-vei-c7=""
+                                class="pro-nav slick-row-10 slick-arrow-style slick-initialized slick-slider">
+                                <div class="slick-list draggable" style="padding: 0px;">
+                                    <div class="slick-track"
+                                        style="opacity: 1; width: 540px; transform: translate3d(0px, 0px, 0px);">
+                                        <div *ngFor="let image of productshareddata.imageUrl"
+                                            class="slick-slide slick-current slick-center" data-slick-index="0"
+                                            aria-hidden="true" style="width: 115px;">
+                                            <div>
+                                                <div _ngcontent-vei-c7="" class="pro-nav-thumb"
+                                                    style="width: 100%; display: inline-block;"><img
+                                                        (click)="selectimg(image)" _ngcontent-vei-c7="" src="{{image}}">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div _ngcontent-vei-c7="" class="col-lg-7">
+                            <div _ngcontent-vei-c7="" class="row">
+                                <div _ngcontent-vei-c7="" class="col-12">
+                                    <div _ngcontent-vei-c7="" class="breadcrumb-wrap">
+                                        <nav _ngcontent-vei-c7="" aria-label="breadcrumb">
+                                            <ul _ngcontent-vei-c7="" class="breadcrumb">
+                                                <li _ngcontent-vei-c7="" class="breadcrumb-item"><a _ngcontent-vei-c7=""
+                                                        [routerLink]="['/']"><i _ngcontent-vei-c7=""
+                                                            class="fa fa-home"></i></a></li>
+                                                <li _ngcontent-vei-c7="" class="breadcrumb-item"><a _ngcontent-vei-c7=""
+                                                        [routerLink]="['/shop']" href="/shop">SHOP</a></li>
+                                                <li _ngcontent-vei-c7="" aria-current="page"
+                                                    class="breadcrumb-item active">
+                                                    {{productshareddata.sub_category.toUpperCase()}}
+                                                </li>
+                                                <li (click)="previousproduct()" _ngcontent-vei-c7=""
+                                                    class="breadcrumb-item"><a _ngcontent-vei-c7=""><i
+                                                            _ngcontent-vei-c7="" class="fa fa-arrow-left"></i></a></li>
+                                                <li (click)="nextproduct()" _ngcontent-vei-c7=""
+                                                    class="breadcrumb-item"><a _ngcontent-vei-c7=""><i
+                                                            _ngcontent-vei-c7="" class="fa fa-arrow-right"></i></a></li>
+                                            </ul>
+
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                            <div _ngcontent-vei-c7="" class="product-details-des">
+                                <h3 _ngcontent-vei-c7="" class="product-name"
+                                    style="font-size: 24px; font-family: Amethysta; font-weight: bold; margin-bottom: 20px;">
+                                    {{productshareddata.productname.toUpperCase()}} </h3>
+                                <div _ngcontent-vei-c7="" class="price-box"
+                                    style="font-size: 24px; font-family: Amethysta; font-weight: bold;"><span
+                                        _ngcontent-vei-c7="" class="price-regular" style="color: #81ca33;">
+                                        ₹{{productshareddata.min_price}} </span><!----><!----></div>
+                                <h3 _ngcontent-vei-c7="" class="product-name"
+                                    style="font-size: 24px; font-family: Amethysta; font-weight: bold;"><br
+                                        _ngcontent-vei-c7=""> ITEM CODE : {{productshareddata.sku}} </h3>
+                                <div _ngcontent-vei-c7="" class="quantity-cart-box d-flex align-items-center">
+                                    <div _ngcontent-vei-c7="" class="quantity" style="display: none;">
+                                        <div _ngcontent-vei-c7="" class="pro-qty"><span
+                                                class="dec qtybtn">-</span><input _ngcontent-vei-c7=""
+                                                type="number"><span class="inc qtybtn">+</span></div>
+                                    </div>
+                                </div>
+                                <div _ngcontent-vei-c7="">
+                                    <div _ngcontent-vei-c7="" class="pro-size">
+                                        <h6 _ngcontent-vei-c7="" class="option-title"
+                                            style="font-size: 18px; font-family: Amethysta; font-weight: bold;">
+                                            <span _ngcontent-vei-c7=""></span>
+                                        </h6><!---->
+                                    </div>
+                                    <div _ngcontent-vei-c7="" class="row">
+                                        <div *ngIf="varient.length == 0" _ngcontent-vei-c7="" class="col">
+                                            <div _ngcontent-vei-c7="" class="pro-size">
+                                                <h6 _ngcontent-vei-c7="" class="option-title"
+                                                    style="font-size: 14px; font-family: Amethysta; font-weight: bold;">
+                                                    <span _ngcontent-vei-c7=""
+                                                        [innerHTML]="formatDescription(productshareddata.length)">
+                                                    </span>
+                                                </h6>
+                                            </div>
+                                            <div _ngcontent-vei-c7="" class="pro-size">
+                                                <h6 _ngcontent-vei-c7="" class="option-title"
+                                                    style="font-size: 14px; font-family: Amethysta; font-weight: bold;">
+                                                    <span _ngcontent-vei-c7=""
+                                                        [innerHTML]="formatDescription(productshareddata.width)">
+                                                    </span>
+                                                </h6>
+                                            </div>
+                                            <div _ngcontent-vei-c7=""></div>
+                                        </div>
+                                        <div *ngIf="varient.length!=0" _ngcontent-het-c7="" class="col">
+
+                                            <div _ngcontent-het-c7="">
+                                                <div _ngcontent-het-c7="" class="pro-size">
+                                                    <h6 _ngcontent-het-c7="" class="option-title"
+                                                        style="font-size: 14px; font-family: Amethysta; font-weight: bold;">
+                                                    </h6>
+                                                    <div *ngFor="let varientdata of  varient;let i =index"
+                                                        _ngcontent-het-c7="" (click)="selectvarient(varientdata,i)"
+                                                        class="size-box" [ngClass]="{'active': varientdata.activate}"><a
+                                                            _ngcontent-het-c7=""
+                                                            style="font-size: 14px; font-family: Amethysta; font-weight: bold;">
+                                                            {{varientdata.size}} </a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div _ngcontent-vei-c7="" class="col">
+                                            <div _ngcontent-vei-c7="" class="action_link">
+                                                <div _ngcontent-vei-c7="" class="availability"><br _ngcontent-vei-c7="">
+                                                    <i *ngIf="checkStokeaviable(productshareddata.stocks)"
+                                                        _ngcontent-vei-c7="" class="fa fa-check-circle me-1">
+                                                    </i>
+                                                    <span _ngcontent-vei-c7=""
+                                                        *ngIf="checkStokeaviable(productshareddata.stocks)"
+                                                        style="font-size: 14px; font-family: Amethysta; font-weight: bold;">In
+                                                        Stock
+                                                    </span>
+                                                    <i *ngIf="!checkStokeaviable(productshareddata.stocks)"
+                                                        _ngcontent-vei-c7="" class="fa fa-close-">
+                                                    </i>
+                                                    <span _ngcontent-vei-c7=""
+                                                        *ngIf="!checkStokeaviable(productshareddata.stocks)"
+                                                        style="font-size: 14px; font-family: Amethysta; font-weight: bold;">
+                                                        Not In
+                                                        Stock
+                                                    </span>
+                                                    <br _ngcontent-vei-c7=""><a (click)="addtocart()"
+                                                        _ngcontent-vei-c7="" class="btn btn-cart2"
+                                                        style="font-size: 15px; font-family: Amethysta; font-weight: bold;">BUY
+                                                        NOW</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!---->
+                                <div _ngcontent-hgo-c7="">
+                                    <div _ngcontent-hgo-c7="" class="pro-size">
+                                        <h6 _ngcontent-hgo-c7="" class=""
+                                            style="font-size: 14px; font-family: Amethysta; font-weight: bold; line-height: 1.7;">
+                                            <span _ngcontent-hgo-c7="">{{productshareddata.fastening}}
+                                            </span>
+                                        </h6><!---->
+                                    </div><!---->
+                                </div>
+                                <div _ngcontent-vei-c7="" class="col">
+                                    <div _ngcontent-vei-c7="" class="product-description col">
+                                        <div _ngcontent-vei-c7="" rows="6"
+                                            style="font-size: 16px; font-family: Amethysta; font-weight: bold; width: 100%;"
+                                            [innerHTML]="formatDescription(productshareddata.description.toUpperCase())">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- related products -->
+    <section *ngIf="this.ValidatorChecker(this.productshareddata.related)" _ngcontent-vei-c7=""
+        class="feature-product section-padding">
+        <div _ngcontent-vei-c7="" class="container">
+            <div _ngcontent-vei-c7="" class="row">
+                <div _ngcontent-vei-c7="" class="col-12">
+                    <div _ngcontent-vei-c7="" class="section-title text-center">
+                        <h5 _ngcontent-vei-c7="" style="font-size: large !important; font-weight: bold; font-family: Amethysta;" class="title">YOU MAY ALSO LIKE</h5>
+                    </div>
+                </div>
+            </div>
+            <div _ngcontent-vei-c7="" class="row">
+                <div _ngcontent-vei-c7="" class="col-12">
+                    <div _ngcontent-vei-c7=""
+                        class="product-carousel-4 slick-row-10 slick-arrow-style slick-initialized slick-slider">
+                        <div class="slick-list draggable">
+                            <div class="slick-track"
+                                style="opacity: 1; width: 984px; transform: translate3d(0px, 0px, 0px);">
+                                <owl-carousel-o [options]="customOptions">
+                                    <ng-template carouselSlide *ngFor="let related of relatedproducts">
+                                        <div (click)="selectdata(related)">
+                                            <div _ngcontent-vei-c7="" class="product-item bg:'red'"
+                                                style="width: 100%; display: inline-block;">
+                                                <figure _ngcontent-vei-c7="" class="product-thumb"><a
+                                                        _ngcontent-vei-c7="" tabindex="0"><img
+                                                            style="width: 320px;height: 255px;" _ngcontent-vei-c7=""
+                                                            class="pri-img" src="{{related.imageUrl[0]}}"><img
+                                                            style="width: 320px;height: 255px;" _ngcontent-vei-c7=""
+                                                            class="sec-img" src="{{related.imageUrl[0]}}"></a>
+                                                </figure>
+                                                <div _ngcontent-vei-c7="" class="product-caption text-center">
+                                                    <div _ngcontent-vei-c7="" class="product-identity">
+                                                        <p _ngcontent-vei-c7="" class="manufacturer-name"><a
+                                                                _ngcontent-vei-c7=""
+                                                                style="font-size: 18 !important; font-weight: bold; font-family: Amethysta;"
+                                                                tabindex="0">{{related.productname.toUpperCase()}} </a></p>
+                                                    </div>
+                                                    <h6 _ngcontent-vei-c7="" class="product-name"><a
+                                                            _ngcontent-vei-c7=""
+                                                            style="font-size: 18 !important; font-weight: bold; font-family: Amethysta;"
+                                                            tabindex="0">{{related.sub_category.toUpperCase()}} </a>
+                                                    </h6>
+                                                    <div _ngcontent-vei-c7="" class="price-box"><span
+                                                            _ngcontent-vei-c7="" class="price-regular"
+                                                            style="color: #81ca33;">₹{{related.min_price}} </span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </owl-carousel-o>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

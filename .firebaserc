@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "glownglitter-1f7ab": {
+      "hosting": {
+        "glownglitter": [
+          "glownglitter-1f7ab"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "glownglitter-1f7ab"
+  }
+}

@@ -1,0 +1,182 @@
+<header _ngcontent-uga-c18="" class="header-area header-wide py-1">
+    <!-- desktop -->
+    <div _ngcontent-uga-c18="" class="main-header d-none d-lg-block">
+        <div _ngcontent-uga-c18="" class="header-main-area sticky py-1">
+            <div _ngcontent-uga-c18="" class="container">
+                <div _ngcontent-uga-c18="" class="row align-items-center position-relative"
+                    style="background-color: #070605;">
+                    <div _ngcontent-uga-c18="" class="col-lg-2">
+                        <div _ngcontent-uga-c18="" class="logo"><a _ngcontent-uga-c18="" [routerLink]="['']"
+                                href="/home"><img _ngcontent-uga-c18="" src="assets/images/logo.png" height="80px"
+                                    width="150%" alt="Brand Logo"></a></div>
+                    </div>
+                    <div _ngcontent-uga-c18="" class="col-lg-6 position-static">
+                        <div _ngcontent-uga-c18="" class="main-menu-area">
+                            <div _ngcontent-uga-c18="" class="main-menu">
+                                <nav _ngcontent-uga-c18="" class="desktop-menu">
+                                    <ul _ngcontent-uga-c18="" class="mobile-menu">
+                                        <li _ngcontent-uga-c18="" [routerLink]="['/']" class="menu-item-has-children"
+                                            tabindex="0"><a _ngcontent-uga-c18="">HOME</a></li>
+                                        <li _ngcontent-uga-c18="" [routerLink]="['/shop']"
+                                            class="menu-item-has-children" tabindex="0"><a _ngcontent-uga-c18="">
+                                                SHOP</a></li>
+                                        <li _ngcontent-uga-c18="" [routerLink]="['/about']"
+                                            class="menu-item-has-children" tabindex="0"><a _ngcontent-uga-c18="">ABOUT
+                                                US</a></li>
+                                        <li _ngcontent-uga-c18="" [routerLink]="['/contact']" tabindex="0"><a
+                                                _ngcontent-uga-c18="">CONTACT US</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div _ngcontent-uga-c18="" class="col-lg-4">
+                        <div _ngcontent-uga-c18=""
+                            class="header-right d-flex align-items-center justify-content-xl-between justify-content-lg-end">
+                            <div _ngcontent-uga-c18="" class="header-search-container">
+                                <input #search _ngcontent-uga-c18="" type="text" placeholder="Search entire store"
+                                    (keyup.enter)="trigertrefreshsearch(search.value)" class="header-search-field">
+                            </div>
+                            <div _ngcontent-uga-c18="" class="header-configure-area" style="background-color: #180905;">
+                                <ul _ngcontent-uga-c18="" class="nav justify-content-end">
+                                    <li _ngcontent-uga-c18="" class="user-hover"><a _ngcontent-uga-c18=""><i
+                                                _ngcontent-uga-c18="" class="pe-7s-user"></i></a>
+                                        <ul *ngIf="!islogin" _ngcontent-uga-c18="" class="dropdown-list">
+                                            <li _ngcontent-uga-c18=""><a _ngcontent-uga-c18=""
+                                                    [routerLink]="['login']">LOGIN</a></li>
+                                            <li _ngcontent-uga-c18=""><a _ngcontent-uga-c18=""
+                                                    [routerLink]="['signup']">REGISTER</a></li>
+
+                                        </ul><!----><!---->
+                                        <ul *ngIf="islogin" _ngcontent-uga-c18="" class="dropdown-list">
+                                            <li _ngcontent-uga-c18=""><a _ngcontent-uga-c18=""
+                                                    [routerLink]="['logout']">LOGOUT</a></li>
+                                            <li _ngcontent-uga-c18=""><a _ngcontent-uga-c18=""
+                                                    [routerLink]="['account']">MY ACCOUNT</a></li>
+
+                                        </ul><!----><!---->
+                                    </li>
+                                    <li _ngcontent-uga-c18=""><a _ngcontent-uga-c18="" (click)="cart()"
+                                            class="minicart-btn"><i _ngcontent-uga-c18="" class="pe-7s-shopbag"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- mobile -->
+    <div _ngcontent-uga-c18="" class="mobile-header d-lg-none d-md-block sticky"
+        style="background-color: rgb(15, 12, 8);">
+        <div _ngcontent-uga-c18="" class="container-fluid">
+            <div _ngcontent-uga-c18="" class="row align-items-center">
+                <div _ngcontent-uga-c18="" class="col-12">
+                    <div _ngcontent-uga-c18="" class="mobile-main-header">
+                        <div _ngcontent-uga-c18="" class="mobile-logo"><a _ngcontent-uga-c18="" routerlink="home"
+                                href="/home"><img _ngcontent-uga-c18="" src="assets/images/logo.png"
+                                    alt="Brand Logo"></a></div>
+                        <div _ngcontent-uga-c18="" class="mobile-menu-toggler">
+                            <div _ngcontent-uga-c18="" class="mini-cart-wrap"><a _ngcontent-uga-c18="" routerlink="cart"
+                                    href="/cart"><i _ngcontent-uga-c18="" routerlink="./cart" class="pe-7s-shopbag"
+                                        tabindex="0"></i>
+                                    <div _ngcontent-uga-c18="" class="notification">0</div>
+                                </a></div><button (click)="sideopen()" _ngcontent-uga-c18="" class="mobile-menu-btn"
+                                style="background-color: rgb(233, 227, 219);"><span _ngcontent-uga-c18=""></span><span
+                                    _ngcontent-uga-c18=""></span><span _ngcontent-uga-c18=""></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- side bar -->
+    <aside _ngcontent-uga-c18="" [ngClass]="sideclass">
+        <div _ngcontent-uga-c18="" class="off-canvas-overlay"></div>
+        <div _ngcontent-uga-c18="" class="off-canvas-inner-content">
+            <div (click)="sideclose()" _ngcontent-uga-c18="" class="btn-close-off-canvas"><i _ngcontent-uga-c18=""
+                    class="pe-7s-close"></i>
+            </div>
+            <div _ngcontent-uga-c18="" class="off-canvas-inner">
+                <div _ngcontent-uga-c18="" class="search-box-offcanvas">
+                    <form _ngcontent-uga-c18="" novalidate="" class="ng-untouched ng-pristine ng-valid"><input
+                            #sidenavsearch _ngcontent-uga-c18="" type="text" placeholder="Search entire store"
+                            class="header-search-field"><button (click)="trigertrefreshsearch(sidenavsearch.value)"
+                            _ngcontent-uga-c18="" class="search-btn"><i _ngcontent-uga-c18=""
+                                class="pe-7s-search"></i></button></form>
+                </div>
+                <div _ngcontent-uga-c18="" class="mobile-navigation">
+                    <nav _ngcontent-uga-c18="">
+                        <ul _ngcontent-uga-c18="" class="mobile-menu">
+                            <li _ngcontent-uga-c18="" class="menu-item-has-children"><a (click)="sideclose()"
+                                    _ngcontent-uga-c18="" [routerLink]="['/']" href="/home">HOME</a></li>
+                            <li _ngcontent-uga-c18="" class="menu-item-has-children"><a (click)="sideclose()"
+                                    _ngcontent-uga-c18="" [routerLink]="['/shop']" href="/shop">SHOP</a></li>
+                            <li _ngcontent-uga-c18="" class="menu-item-has-children"><a (click)="sideclose()"
+                                    _ngcontent-uga-c18="" [routerLink]="['/about']" href="/about">ABOUT US</a></li>
+                            <li _ngcontent-uga-c18=""><a (click)="sideclose()" _ngcontent-uga-c18=""
+                                    [routerLink]="['/contact']" href="/contact">CONTACT US</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div _ngcontent-uga-c18="" class="mobile-settings">
+                    <ul _ngcontent-uga-c18="" class="nav">
+                        <li _ngcontent-uga-c18="">
+                            <div _ngcontent-uga-c18="" class="dropdown mobile-top-dropdown">
+                                <a _ngcontent-uga-c18="" href="#" id="myaccount" data-bs-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"> MY ACCOUNT <i
+                                        _ngcontent-uga-c18="" class="fa fa-angle-down"></i>
+                                </a>
+                                <div _ngcontent-uga-c18="" aria-labelledby="myaccount" class="dropdown-menu">
+                                    <div *ngIf="islogin">
+                                        <a (click)="sideclose()" _ngcontent-uga-c18="" [routerLink]="['/account']"
+                                            class="dropdown-item" href="/account">MY ACCOUNT</a>
+                                        <a (click)="sideclose()" _ngcontent-uga-c18="" [routerLink]="['/logout']"
+                                            class="dropdown-item" href="/logout"> LOGOUT
+                                        </a>
+                                    </div>
+
+                                    <div *ngIf="!islogin">
+                                        <a (click)="sideclose()" _ngcontent-uga-c18="" [routerLink]="['/login']"
+                                            class="dropdown-item" href="/login"> LOGIN
+                                        </a>
+                                        <a (click)="sideclose()" _ngcontent-uga-c18="" [routerLink]="['/signup']"
+                                            class="dropdown-item" href="/register">REGISTER
+                                        </a>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div _ngcontent-uga-c18="" class="offcanvas-widget-area">
+                    <div _ngcontent-uga-c18="" class="off-canvas-contact-widget">
+                        <ul _ngcontent-uga-c18="">
+                            <li _ngcontent-uga-c18=""><i _ngcontent-uga-c18="" class="fa fa-mobile"></i><a
+                                    _ngcontent-uga-c18="" routerlink="contact" href="/contact">(+91)
+                                    9051398740</a></li>
+                            <li _ngcontent-uga-c18=""><i _ngcontent-uga-c18="" class="fa fa-mobile"></i><a
+                                    _ngcontent-uga-c18="" routerlink="contact" href="/contact">(+91)
+                                    9874406700</a></li>
+                            <li _ngcontent-uga-c18=""><i _ngcontent-uga-c18="" class="fa fa-envelope-o"></i><a
+                                    _ngcontent-uga-c18="" routerlink="contact" href="/contact">infoglownglitter.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div _ngcontent-uga-c18="" class="off-canvas-social-widget"><a _ngcontent-uga-c18=""
+                            routerlink="blog" href="/blog"><i _ngcontent-uga-c18="" class="fa fa-facebook"></i></a><a
+                            _ngcontent-uga-c18="" routerlink="blog" href="/blog"><i _ngcontent-uga-c18=""
+                                class="fa fa-twitter"></i></a><a _ngcontent-uga-c18="" routerlink="blog" href="/blog"><i
+                                _ngcontent-uga-c18="" class="fa fa-pinterest-p"></i></a><a _ngcontent-uga-c18=""
+                            routerlink="blog" href="/blog"><i _ngcontent-uga-c18="" class="fa fa-linkedin"></i></a><a
+                            _ngcontent-uga-c18="" routerlink="blog" href="/blog"><i _ngcontent-uga-c18=""
+                                class="fa fa-youtube-play"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </aside>
+</header>

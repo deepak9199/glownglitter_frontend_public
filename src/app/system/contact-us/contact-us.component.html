@@ -1,0 +1,110 @@
+<app-loading *ngIf="loading"></app-loading>
+<main *ngIf="!loading" _ngcontent-krs-c8="">
+    <div _ngcontent-krs-c8="" class="breadcrumb-area">
+        <div _ngcontent-krs-c8="" class="container">
+            <div _ngcontent-krs-c8="" class="row">
+                <div _ngcontent-krs-c8="" class="col-12">
+                    <div _ngcontent-krs-c8="" class="breadcrumb-wrap">
+                        <nav _ngcontent-krs-c8="" aria-label="breadcrumb">
+                            <ul _ngcontent-krs-c8="" class="breadcrumb">
+                                <li _ngcontent-krs-c8="" class="breadcrumb-item"><a _ngcontent-krs-c8=""><i
+                                            _ngcontent-krs-c8="" class="fa fa-home"></i></a></li>
+                                <li _ngcontent-krs-c8="" aria-current="page" class="breadcrumb-item active">contact us
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div _ngcontent-krs-c8="" class="map-area section-padding">
+        <div _ngcontent-krs-c8="" style="padding: 10px; border-radius: 5px; border-style: groove; margin: 10px 10px;">
+            <iframe _ngcontent-krs-c8=""
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1842.9684436850537!2d88.36430167118833!3d22.50655099510618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027128155c1587%3A0x2c9f91eb7c29d03c!2sGlow%20N%20Glitter%20%7C%20Best%20Silver%20Jewellery%20and%20Brass%20handicraft%20items%20Shop%20in%20South%20Kolkata!5e0!3m2!1sen!2sin!4v1682152651032!5m2!1sen!2sin"
+                width="100%" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                style="border: 0;"></iframe>
+        </div>
+    </div>
+    <div _ngcontent-krs-c8="" class="contact-area section-padding pt-0">
+        <div _ngcontent-krs-c8="" class="container">
+            <div _ngcontent-krs-c8="" class="row">
+                <div _ngcontent-krs-c8="" class="col-lg-6">
+                    <div _ngcontent-krs-c8="" class="contact-message">
+                        <h4 _ngcontent-krs-c8="" class="contact-title">For Enquiry</h4>
+                        <!-- contact-form.component.html -->
+                        <form novalidate id="contact-form" class="contact-form" (ngSubmit)="submitForm()">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <input name="name" placeholder="Name *" type="text" required
+                                        style="background-color:#e5e5e5;border-radius: 10px;"
+                                        [(ngModel)]="formData.name">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <input style="background-color:#e5e5e5;border-radius: 10px;" name="contact"
+                                        placeholder="contact *" type="text" required [(ngModel)]="formData.contact">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <input style="background-color:#e5e5e5;border-radius: 10px;" name="email_address"
+                                        placeholder="Email *" type="email" required [(ngModel)]="formData.email">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <input style="background-color:#e5e5e5;border-radius: 10px;" name="contact_subject"
+                                        placeholder="Subject *" type="text" [(ngModel)]="formData.subject">
+                                </div>
+                                <div class="col-12">
+                                    <div class="contact2-textarea text-center">
+                                        <textarea style="background-color:#e5e5e5;border-radius: 10px;"
+                                            placeholder="Message *" name="message" required
+                                            [(ngModel)]="formData.message"></textarea>
+                                    </div>
+                                    <div class="contact-btn">
+                                        <button type="submit" class="btn btn-sqr">Send
+                                            Message</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                <div _ngcontent-krs-c8="" class="col-lg-6">
+                    <div _ngcontent-krs-c8="" class="contact-info">
+                        <h4 _ngcontent-krs-c8="" class="contact-title">Contact Us</h4>
+                        <p _ngcontent-krs-c8="">Glow N Glitter is a Firm that specializes in designing manufacturing and
+                            retailing silver jewellery. The Glow N Glitter collection caters to a variety of taste
+                            ranging from small simple jewellery fit for every day use to more ornate pieces. Keeping
+                            pace with the shifting fashion trends GNG focuses on both the contemporary and age old
+                            classical designs. The aim is to bridge style with sophistication and grace with splendor.
+                        </p>
+                        <p _ngcontent-krs-c8="">Added to the huge collection of silver jewellery the GNG repertoire also
+                            boasts of an equally wide range of brass products. The range includes puja items like diyas,
+                            elaborate lamps chowkis various statues of Krishna Ganesha Buddha along with items of home
+                            décor.</p>
+
+                        <ul _ngcontent-krs-c8="">
+                            <li _ngcontent-krs-c8=""><i _ngcontent-krs-c8="" class="fa fa-fax"></i> Address :
+                                115, Jodhpur Park, Kolkata 700068,</li>
+                            <li _ngcontent-krs-c8=""><i _ngcontent-krs-c8="" class="fa fa-phone"></i> E-mail:
+                                info&#64;glownglitter.com</li>
+                            <li _ngcontent-krs-c8=""><i _ngcontent-krs-c8="" class="fa fa-envelope-o"></i><span
+                                    _ngcontent-krs-c8="">call/whatsapp : </span><span _ngcontent-krs-c8="">91 905 139
+                                    8740</span></li>
+                            <li _ngcontent-krs-c8=""><i _ngcontent-krs-c8="" class="fa fa-envelope-o"></i><span
+                                    _ngcontent-krs-c8="">call/whatsapp :</span><span _ngcontent-krs-c8="">91 987 440
+                                    6700</span></li>
+                        </ul>
+                        <div _ngcontent-krs-c8="" class="working-time">
+                            <h6 _ngcontent-krs-c8="">Working Hours</h6>
+                            <p _ngcontent-krs-c8=""><span _ngcontent-krs-c8="">Monday – Saturday:</span>
+                                {{workinghours.weekday}}</p>
+                            <p _ngcontent-krs-c8=""><span _ngcontent-krs-c8="">Sunday:</span> {{workinghours.sunday}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

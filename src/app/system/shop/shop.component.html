@@ -1,0 +1,131 @@
+<!-- <app-loading *ngIf="loading"></app-loading> -->
+<div>
+    <div _ngcontent-krs-c5="" class="container"><br _ngcontent-krs-c5="">
+        <div _ngcontent-krs-c5="" class="row">
+            <div _ngcontent-krs-c5="" class="col-12">
+                <div _ngcontent-krs-c5="" class="section-title text-center">
+                    <h2 _ngcontent-krs-c5="" class="title" style="font-size: 25; margin-bottom: 20px;">PRODUCTS</h2>
+                </div>
+                <section _ngcontent-krs-c5="" class="category-section">
+                    <div _ngcontent-krs-c5="" class="category-container">
+                        <div *ngFor="let catmast of category_master" (click)="selectmastcat(catmast)"
+                            _ngcontent-krs-c5="" type="button" class="category-item ng-star-inserted">
+                            {{catmast.category.toUpperCase()}}
+                        </div>
+
+                    </div>
+                </section>
+                <div _ngcontent-krs-c5="" class="section-title text-center">
+                    <h2 _ngcontent-krs-c5="" class="title" style="font-size: 25; margin-bottom: 20px;">
+                        {{selected_cat_master.toUpperCase()}}</h2>
+                </div>
+                <section _ngcontent-krs-c5="" class="category-section">
+                    <div _ngcontent-krs-c5="" class="category-container">
+                        <div *ngFor="let subcatmastimg of shortsubcatlowtohigh(filterbysubcat(sub_category_master,selected_cat_master))"
+                            (click)="selectsubcat(subcatmastimg)" _ngcontent-krs-c5="" type="button"
+                            class="category-item ng-star-inserted">
+                            {{subcatmastimg.sub_category.toUpperCase()}} </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div _ngcontent-krs-c5="" class="row">
+            <div _ngcontent-krs-c5="" class="col-12">
+                <div _ngcontent-krs-c5="" class="product-container">
+                    <div _ngcontent-krs-c5="" class="tab-content">
+                        <div _ngcontent-krs-c5="" class="tab-pane fade show active">
+                            <div _ngcontent-krs-c5=""
+                                class="product-carousel-4 slick-row-10 slick-arrow-style slick-initialized slick-slider">
+                                <div class="slick-list draggable">
+                                    <div class="slick-track"
+                                        style="opacity: 1; width: 0px; transform: translate3d(0px, 0px, 0px);">
+                                        <div class="slick-slide slick-current slick-active" data-slick-index="0"
+                                            aria-hidden="false" style="width: 0px;">
+                                            <div>
+                                                <div _ngcontent-krs-c5="" style="width: 100%; display: inline-block;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false"
+                                            style="width: 0px;">
+                                            <div></div>
+                                        </div>
+                                        <div class="slick-slide slick-active" data-slick-index="2" aria-hidden="false"
+                                            style="width: 0px;">
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div _ngcontent-krs-c5="" class="shop-main-wrapper section-padding">
+
+        <div _ngcontent-krs-c5="" class="container">
+            <select [(ngModel)]="selectedSort" (change)="shortdata(selectedSort)" name="sort_option"
+                id="sort_options_id" style="float: right; margin-right: 10px;"
+                class="js-select selectpicker dropdown-select max-width-200 max-width-160-sm right-dropdown-0 px-2 px-xl-0"
+                data-style="btn-sm bg-white font-weight-normal py-2 border text-gray-20 bg-lg-down-transparent border-lg-down-0"
+                tabindex="-98">
+                <option selected id="default" value="">Sort by</option>
+                <option id="az" name="az" value="two">Sort by A-Z</option>
+                <option id="za" value="three">Sort by Z-A</option>
+                <option id="pricelh" value="four">Price: low to high</option>
+                <option id="pricehl" value="five">Price: high to low</option>
+            </select>
+
+            <!-- Button or any other trigger to reset the option -->
+        </div>
+    </div>
+
+    <div _ngcontent-krs-c5="" class="shop-main-wrapper section-padding">
+
+        <div _ngcontent-krs-c5="" class="container">
+
+            <div _ngcontent-krs-c5="" class="row">
+
+                <div _ngcontent-krs-c5="" class="col-lg-12 order-1 order-lg-2">
+                    <div _ngcontent-krs-c5="" class="shop-product-wrapper">
+
+                        <div _ngcontent-krs-c5="" class="shop-product-wrap grid-view row mbn-30">
+
+                            <div *ngFor="let products of filteredproducts" _ngcontent-krs-c5=""
+                                class="col-md-3 col-sm-6 ng-star-inserted">
+                                <div (click)="selectdata(products)" _ngcontent-krs-c16="" class="product-item">
+                                    <figure _ngcontent-krs-c16="" class="product-thumb">
+                                        <a _ngcontent-krs-c16="">
+                                            <!-- <img _ngcontent-krs-c16="" alt="Placeholder Image" class="pri-img"
+                                                src="assets/images/imgloading.gif" loading="lazy"
+                                                data-src="{{products.imageUrl[0]}}">
+                                            <img _ngcontent-krs-c16="" class="sec-img" src="{{products.imageUrl[0]}}"
+                                                alt="Actual Image"> -->
+
+                                            <!-- Placeholder image to reserve space -->
+                                            <img #placeholderImage src="assets/images/imgloading.gif"
+                                                alt="Placeholder Image" loading="lazy"
+                                                data-src="{{products.imageUrl[0]}}">
+                                        </a>
+                                    </figure>
+                                    <div _ngcontent-krs-c16="" class="product-caption text-center">
+                                        <h6 _ngcontent-krs-c16="" class="product-name"><a style="font-size: small;"
+                                                _ngcontent-krs-c16="" routerlink="../product-detail"
+                                                href="/product-detail">
+                                                {{products.productname.toUpperCase()}} </a></h6>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><br _ngcontent-krs-c5=""><br _ngcontent-krs-c5="">
+                        <div _ngcontent-krs-c5="" class="text-center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div _ngcontent-krs-c5="" class="scroll-top not-visible"><i _ngcontent-krs-c5="" class="fa fa-angle-up"></i></div>
+</div>

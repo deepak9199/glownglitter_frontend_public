@@ -1,0 +1,93 @@
+<app-loading *ngIf="loading"></app-loading>
+<main *ngIf="!loading" _ngcontent-krs-c12="">
+    <div _ngcontent-krs-c12="" class="breadcrumb-area">
+        <div _ngcontent-krs-c12="" class="container">
+            <div _ngcontent-krs-c12="" class="row">
+                <div _ngcontent-krs-c12="" class="col-12">
+                    <div _ngcontent-krs-c12="" class="breadcrumb-wrap">
+                        <nav _ngcontent-krs-c12="" aria-label="breadcrumb">
+                            <ul _ngcontent-krs-c12="" class="breadcrumb">
+                                <li _ngcontent-krs-c12="" class="breadcrumb-item"><a [routerLink]="['/']"
+                                        _ngcontent-krs-c12=""><i _ngcontent-krs-c12="" class="fa fa-home"></i></a></li>
+                                <li _ngcontent-krs-c12="" class="breadcrumb-item"><a [routerLink]="['/account']"
+                                        _ngcontent-krs-c12="">Profile</a>
+                                </li>
+                                <li _ngcontent-krs-c12="" aria-current="page" class="breadcrumb-item active">Order</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div _ngcontent-krs-c12="" class="cart-main-wrapper section-padding">
+        <div _ngcontent-krs-c12="" class="container">
+            <div _ngcontent-krs-c12="" class="section-bg-color">
+                <div _ngcontent-krs-c12="" class="row">
+                    <div _ngcontent-krs-c12="" class="col-lg-12">
+                        <div _ngcontent-krs-c12="" class="cart-table table-responsive">
+                            <table _ngcontent-krs-c12="" class="table table-bordered">
+                                <thead _ngcontent-krs-c12="">
+                                    <tr _ngcontent-krs-c12="">
+                                        <th _ngcontent-krs-c12="" class="pro-thumbnail">Thumbnail</th>
+                                        <th _ngcontent-krs-c12="" class="pro-title">Product</th>
+                                        <th _ngcontent-krs-c12="" class="pro-price">Price</th>
+                                        <th _ngcontent-krs-c12="" class="pro-quantity">Quantity</th>
+                                        <th _ngcontent-krs-c12="" class="pro-subtotal">Total</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody *ngIf="order.cartItems.length!=0" _ngcontent-krs-c12="">
+                                    <tr *ngFor="let cartobj of order.cartItems;let i = index" _ngcontent-krs-c12=""
+                                        class="ng-star-inserted">
+                                        <td _ngcontent-krs-c12="" class="pro-thumbnail"><a _ngcontent-krs-c12=""
+                                                href="#"><img _ngcontent-krs-c12="" alt="Product" class="img-fluid"
+                                                    src="{{cartobj.imageUrl}}"></a>
+                                        </td>
+                                        <td _ngcontent-krs-c12="" class="pro-title"><a _ngcontent-krs-c12="" href="#">
+                                                {{cartobj.category}} ({{cartobj.productname}}) </a></td>
+                                        <td _ngcontent-krs-c12="" class="pro-price"><span _ngcontent-krs-c12="">₹
+                                                {{cartobj.price}} </span></td>
+                                        <td _ngcontent-krs-c12="" class="pro-quantity">
+                                            <div _ngcontent-krs-c12="" class="pro-qty"><input #quantityprod
+                                                    _ngcontent-krs-c12="" value="{{cartobj.quantity}}" type="number"
+                                                    class="ng-untouched ng-pristine ng-valid"></div>
+                                        </td>
+                                        <td _ngcontent-krs-c12="" class="pro-subtotal"><span _ngcontent-krs-c12="">
+                                                ₹ {{cartobj.price}}</span></td>
+
+                                    </tr><!---->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div *ngIf="order.cartItems.length==0" _ngcontent-krs-c12=""
+                            class="cart-update-option d-block d-md-flex justify-content-between">
+                            <div _ngcontent-krs-c12="" class="apply-coupon-wrapper"></div>
+                            <div _ngcontent-krs-c12="" class="cart-update"><a _ngcontent-krs-c12=""
+                                    class="btn btn-sqr">Empty Order</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div _ngcontent-krs-c12="" class="row">
+                    <div _ngcontent-krs-c12="" class="col-lg-5 ml-auto">
+                        <div _ngcontent-krs-c12="" class="cart-calculator-wrapper">
+                            <div _ngcontent-krs-c12="" class="cart-calculate-items">
+                                <h6 _ngcontent-krs-c12="">Order Totals</h6>
+                                <div _ngcontent-krs-c12="" class="table-responsive">
+                                    <table _ngcontent-krs-c12="" class="table">
+
+                                        <tr _ngcontent-krs-c12="" class="total">
+                                            <td _ngcontent-krs-c12="">Total</td>
+                                            <td _ngcontent-krs-c12="" class="total-amount">₹{{order.amount}}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,11 @@
+{
+  "hosting": [
+    {
+      "target": "glownglitter",
+      "source": ".",
+      "frameworksBackend": {
+        "region": "us-east1"
+      }
+    }
+  ]
+}

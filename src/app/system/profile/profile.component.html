@@ -1,0 +1,132 @@
+<app-loading *ngIf="loading"></app-loading>
+<div *ngIf="!loading" _ngcontent-tln-c11="" class="my-account-wrapper section-padding">
+    <div _ngcontent-tln-c11="" class="container">
+        <div _ngcontent-tln-c11="" class="section-bg-color">
+            <div _ngcontent-tln-c11="" class="row">
+                <div _ngcontent-tln-c11="" class="col-lg-12">
+                    <div _ngcontent-tln-c11="" class="myaccount-page-wrapper">
+                        <div _ngcontent-tln-c11="" class="row">
+                            <div _ngcontent-tln-c11="" class="col-lg-3 col-md-4">
+                                <div _ngcontent-tln-c11="" role="tablist" class="myaccount-tab-menu nav"><a
+                                        _ngcontent-tln-c11="" href="#orders" data-bs-toggle="tab" class="active"><i
+                                            _ngcontent-tln-c11="" class="fa fa-cart-arrow-down selected"></i>
+                                        Orders</a><a _ngcontent-tln-c11="" href="#address-edit" data-bs-toggle="tab"
+                                        class=""><i _ngcontent-tln-c11="" class="fa fa-map-marker"></i>
+                                        address</a><a _ngcontent-tln-c11="" href="#account-info" data-bs-toggle="tab"
+                                        class=""><i _ngcontent-tln-c11="" class="fa fa-user"></i> Change Password</a><a
+                                        [routerLink]="['/logout']" _ngcontent-tln-c11=""><i _ngcontent-tln-c11=""
+                                            class="fa fa-sign-out"></i>
+                                        Logout</a></div>
+                            </div>
+                            <div _ngcontent-tln-c11="" class="col-lg-9 col-md-8">
+                                <div _ngcontent-tln-c11="" id="myaccountContent" class="tab-content">
+                                    <div _ngcontent-tln-c11="" id="orders" role="tabpanel"
+                                        class="tab-pane fade active show">
+                                        <div _ngcontent-tln-c11="" class="myaccount-content">
+                                            <h5 _ngcontent-tln-c11="">Orders</h5>
+                                            <div _ngcontent-tln-c11=""
+                                                class="myaccount-table table-responsive text-center">
+                                                <table _ngcontent-tln-c11="" class="table table-bordered">
+                                                    <thead _ngcontent-tln-c11="" class="thead-light">
+                                                        <tr _ngcontent-tln-c11="">
+                                                            <th _ngcontent-tln-c11="">S.No</th>
+                                                            <th _ngcontent-tln-c11="">Order ID</th>
+                                                            <th _ngcontent-tln-c11="">Items</th>
+                                                            <th _ngcontent-tln-c11="">Date</th>
+                                                            <th _ngcontent-tln-c11="">Status</th>
+                                                            <th _ngcontent-tln-c11="">Total</th>
+                                                            <th _ngcontent-tln-c11="">View Oders</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody _ngcontent-tln-c11="">
+                                                        <tr *ngFor="let orderobj of order;let i = index"
+                                                            _ngcontent-tln-c11="" class="ng-star-inserted">
+                                                            <td _ngcontent-tln-c11="">{{i+1}} </td>
+                                                            <td _ngcontent-tln-c11="">{{orderobj.orderId}} </td>
+                                                            <td _ngcontent-tln-c11="">{{orderobj.cartItems.length}}
+                                                            </td>
+                                                            <td _ngcontent-tln-c11="">
+                                                                {{formatCustomTimestamp(orderobj.createdTime)}} </td>
+                                                            <td _ngcontent-tln-c11=""> {{orderobj.status}}</td>
+                                                            <td _ngcontent-tln-c11=""> {{orderobj.amount}}</td>
+                                                            <td _ngcontent-tln-c11=""><a _ngcontent-tln-c11=""
+                                                                    (click)="sharedorderdata(orderobj)"
+                                                                    class="btn btn-sqr">View</a></td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div _ngcontent-tln-c11="" id="address-edit" role="tabpanel" class="tab-pane fade">
+                                        <div _ngcontent-tln-c11="" class="myaccount-content">
+                                            <h5 _ngcontent-tln-c11="">Billing Address</h5>
+                                            <address *ngFor="let add of order" _ngcontent-tln-c11=""
+                                                style="background-color: gray; color: rgb(20, 9, 9); padding: 50px; border-radius: 20px;"
+                                                class="ng-star-inserted">
+                                                <p _ngcontent-tln-c11="" style="text-align: center;"><strong
+                                                        _ngcontent-tln-c11="">Address 1</strong></p>
+                                                <p _ngcontent-tln-c11=""><strong _ngcontent-tln-c11="">Name:
+                                                        {{add.last_name}} {{add.last_name}}</strong></p>
+                                                <p _ngcontent-tln-c11=""><strong _ngcontent-tln-c11="">Address1:
+                                                        {{add.address1}} </strong></p>
+                                                <p _ngcontent-tln-c11=""><strong _ngcontent-tln-c11="">{{add.address2}}
+                                                    </strong></p>
+                                                <p _ngcontent-tln-c11=""><strong _ngcontent-tln-c11="">Pincode:
+                                                        {{add.pincode}} </strong></p>
+                                                <p _ngcontent-tln-c11="">Mobile: (+91) {{add.contact}}</p><!---->
+                                            </address><!---->
+
+                                        </div>
+                                    </div>
+                                    <div _ngcontent-tln-c11="" id="account-info" role="tabpanel" class="tab-pane fade">
+                                        <div _ngcontent-tln-c11="" class="myaccount-content">
+                                            <h5 _ngcontent-tln-c11="">Change Password</h5>
+                                            <div _ngcontent-tln-c11="" class="account-details-form">
+                                                <form _ngcontent-tln-c11="" novalidate="" action="#"
+                                                    class="ng-untouched ng-pristine ng-valid">
+                                                    <fieldset _ngcontent-tln-c11="">
+                                                        <div _ngcontent-tln-c11="" class="single-input-item"><label
+                                                                _ngcontent-tln-c11="" for="current-pwd"
+                                                                class="required">Current Password</label><input #oldpass
+                                                                _ngcontent-tln-c11="" type="password" id="current-pwd"
+                                                                placeholder="Current Password">
+                                                        </div>
+                                                        <div _ngcontent-tln-c11="" class="row">
+                                                            <div _ngcontent-tln-c11="" class="col-lg-6">
+                                                                <div _ngcontent-tln-c11="" class="single-input-item">
+                                                                    <label _ngcontent-tln-c11="" for="new-pwd"
+                                                                        class="required">New Password</label><input
+                                                                        #newpass _ngcontent-tln-c11="" type="password"
+                                                                        id="new-pwd" placeholder="New Password">
+                                                                </div>
+                                                            </div>
+                                                            <div _ngcontent-tln-c11="" class="col-lg-6">
+                                                                <div _ngcontent-tln-c11="" class="single-input-item">
+                                                                    <label _ngcontent-tln-c11="" for="confirm-pwd"
+                                                                        class="required">Confirm
+                                                                        Password</label><input #confirmpass
+                                                                        _ngcontent-tln-c11="" type="password"
+                                                                        id="confirm-pwd" placeholder="Confirm Password">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                    <div _ngcontent-tln-c11="" class="single-input-item"><button
+                                                            (click)="changePassword(oldpass.value,newpass.value,confirmpass.value)"
+                                                            _ngcontent-tln-c11="" class="btn btn-sqr">Save
+                                                            Changes</button></div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
